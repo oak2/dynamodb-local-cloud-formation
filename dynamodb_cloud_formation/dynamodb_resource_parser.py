@@ -39,7 +39,7 @@ class DynamoDbResourceParser:
 			provisionedThroughput['WriteCapacityUnits'] = int(provisionedThroughput['WriteCapacityUnits'])
 			return " --provisioned-throughput '" + json.JSONEncoder(sort_keys=True).encode(provisionedThroughput) + "'"
 		else: 
-			return ""
+			return "--provisioned-throughput ReadCapacityUnits=1,WriteCapacityUnits=1"
 
 	def localSecondaryIndexes(self):
 		if 'LocalSecondaryIndexes' in self.json['Properties']:
