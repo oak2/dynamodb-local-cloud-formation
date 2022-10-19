@@ -70,6 +70,7 @@ class DynamoDbResourceParser:
 					provisionedThroughput['ReadCapacityUnits'] = int(provisionedThroughput['ReadCapacityUnits'])
 					provisionedThroughput['WriteCapacityUnits'] = int(provisionedThroughput['WriteCapacityUnits'])
 				else:
+					print('Default provisionedThroughput...')
 					provisionedThroughput = {}
 					provisionedThroughput['ReadCapacityUnits'] = 1
 					provisionedThroughput['WriteCapacityUnits'] = 1
