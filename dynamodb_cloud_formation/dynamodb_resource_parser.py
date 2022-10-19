@@ -85,7 +85,7 @@ class DynamoDbResourceParser:
 
 			return " --stream-specification '" + json.JSONEncoder(sort_keys=True).encode(streamSpecification) + "'"
 		else: 
-			return ""
+			return " --stream-specification 'StreamEnabled=true'"
 
 
 	def toCLI(self, region, endpoint_url):
