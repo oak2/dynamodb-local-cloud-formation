@@ -83,7 +83,7 @@ class DynamoDbResourceParser:
 		if 'StreamSpecification' in self.json['Properties']:
 			streamSpecification = self.json['Properties']['StreamSpecification']
 			if streamSpecification['StreamViewType'] is not None:
-				streamSpecification['StreamEnabled'] = false
+				streamSpecification['StreamEnabled'] = False
 			return " --stream-specification '" + json.JSONEncoder(sort_keys=True).encode(streamSpecification) + "'"
 		else: 
 			return " --stream-specification 'StreamEnabled=false'"
