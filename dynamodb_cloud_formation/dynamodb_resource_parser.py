@@ -74,6 +74,7 @@ class DynamoDbResourceParser:
 					provisionedThroughput = {}
 					provisionedThroughput['ReadCapacityUnits'] = 1
 					provisionedThroughput['WriteCapacityUnits'] = 1
+					index['ProvisionedThroughput'] = provisionedThroughput
 
 			return " --global-secondary-indexes '" + json.JSONEncoder(sort_keys=True).encode(globalSecondaryIndexes) + "'"
 		else:
